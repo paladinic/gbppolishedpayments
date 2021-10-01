@@ -104,7 +104,7 @@ plan_column_module <- function(input, output, session,
 
   output$price_out <- renderText({
     hold_plan <- plan_data()
-
+    print(hold_plan)
     paste0(
       "$",
       hold_plan$currency,
