@@ -106,8 +106,7 @@ plan_column_module <- function(input, output, session,
     hold_plan <- plan_data()
     print(hold_plan)
     paste0(
-      "$",
-      hold_plan$currency,
+      "£",
       format(as.numeric(hold_plan$amount) / 100, big.mark = ","),
       "/",
       hold_plan$interval
