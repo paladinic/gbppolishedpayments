@@ -28,7 +28,7 @@ plans_box_module_ui <- function(id) {
     title = "Plans",
     width = 12,
     class = "text-center",
-    background = "navy",
+    background = "purple",
     gutter,
     lapply(all_prices, function(price) {
       plan_column_module_ui(

@@ -15,7 +15,7 @@ plan_column_module_ui <- function(id, width) {
       tags$br(),
       tags$br(),
       tags$br(),
-      tags$h1(style="color: #000", shiny::textOutput(ns("price_out"))),
+      tags$h1(style="color: #000", shiny::uiOutput(ns("price_out"))),
       tags$br(),
       tags$br(),
       tags$br(),
@@ -28,7 +28,7 @@ plan_column_module_ui <- function(id, width) {
           ns("choose_plan"),
           "Choose Plan",
           class = "btn-primary btn-lg",
-          style = "color: #FFF; width: 100%;",
+          style = "color: #FFF; width: 100%; background-color:purple;",
         )
       ),
       shinyjs::hidden(tags$div(
@@ -37,7 +37,7 @@ plan_column_module_ui <- function(id, width) {
           ns("change_plan"),
           "Change Plan",
           class = "btn-default btn-lg",
-          style = "width: 100%;",
+          style = "color: #FFF; width: 100%; background-color:purple;",
         )
       )),
       shinyjs::hidden(
@@ -48,6 +48,7 @@ plan_column_module_ui <- function(id, width) {
           style = "
             width: 100%;
             color: #FFF;
+            background-color:purple;
           "
         )
       )
@@ -102,7 +103,7 @@ plan_column_module <- function(input, output, session,
     plan_data()$nickname
   })
 
-  output$price_out <- renderText({
+  output$price_out <- renderUI({
     hold_plan <- plan_data()
     paste0(
       "&#163;",
