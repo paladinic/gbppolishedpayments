@@ -105,7 +105,7 @@ plan_column_module <- function(input, output, session,
   output$price_out <- renderText({
     hold_plan <- plan_data()
     paste0(
-      "£",
+      "&#163;",
       format(as.numeric(hold_plan$amount) / 100, big.mark = ","),
       "/",
       hold_plan$interval

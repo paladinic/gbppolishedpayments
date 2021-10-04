@@ -30,7 +30,7 @@ payments_app_ui <- function(
       shiny::actionLink(
         "go_to_shiny_app",
         paste0("Go to ", app_name),
-        style = "margin-left: -15px; color: #1a8dc7; font-size: 18px;"
+        style = "margin-left: -15px; color: #ffffff; font-size: 18px;"
       )
     ),
     polished::profile_module_ui("profile")
