@@ -126,7 +126,7 @@ credit_card_module_ui <- function(
 credit_card_payment_module <- function(input, output, session,
   trigger = function() NULL,
   amount,
-  currency = "usd"
+  currency = "gbp"
 ) {
   ns <- session$ns
 

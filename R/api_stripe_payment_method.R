@@ -101,7 +101,7 @@ create_payment <- function(
   customer_id,
   payment_method_id,
   amount,
-  currency = "usd",
+  currency = "gbp",
   receipt_email = NULL,
   description = NULL,
   stripe_secret_key = getOption("pp")$keys$secret

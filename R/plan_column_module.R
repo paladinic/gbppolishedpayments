@@ -28,7 +28,7 @@ plan_column_module_ui <- function(id, width) {
           ns("choose_plan"),
           "Choose Plan",
           class = "btn-primary btn-lg",
-          style = "color: #FFF; width: 100%; background-color:purple;",
+          style = "color: #FFF; width: 100%; background-color:#605CA8;",
         )
       ),
       shinyjs::hidden(tags$div(
@@ -37,7 +37,7 @@ plan_column_module_ui <- function(id, width) {
           ns("change_plan"),
           "Change Plan",
           class = "btn-default btn-lg",
-          style = "color: #FFF; width: 100%; background-color:purple;",
+          style = "color: #FFF; width: 100%; background-color:#605CA8;",
         )
       )),
       shinyjs::hidden(
@@ -48,7 +48,7 @@ plan_column_module_ui <- function(id, width) {
           style = "
             width: 100%;
             color: #FFF;
-            background-color:purple;
+            background-color:#605CA8;
           "
         )
       )

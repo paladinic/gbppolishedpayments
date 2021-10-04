@@ -29,7 +29,7 @@ create_payment_module_ui <- function(id) {
 #'
 create_payment_module <- function(input, output, session,
   amount,
-  currency = "usd",
+  currency = "gbp",
   send_receipt_email = TRUE,
   description = NULL,
   ui = NULL

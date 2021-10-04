@@ -33,7 +33,7 @@ billing_module_ui <- function(id) {
               ),
               tags$div(
                 style = "display: inline-block",
-                tags$h4(shiny::textOutput(ns("plan_amount_out")))
+                tags$h4(shiny::uiOutput(ns("plan_amount_out")))
               ),
               tags$hr(style = "margin: 0;")
             ),
@@ -164,7 +164,7 @@ billing_module_ui <- function(id) {
               ns("enable_billing"),
               "Enable Billing",
               class = "btn-primary btn-lg",
-              style = "color: #FFF"
+              style = "background-color: #605CA8; color: #FFF"
             ),
             tags$br(),
             tags$br(),
@@ -334,7 +334,7 @@ billing_module <- function(input, output, session) {
       out
     })
 
-    output$plan_amount_out <- shiny::renderText({
+    output$plan_amount_out <- shiny::renderUI({
       req(session$userData$stripe())
       hold_stripe <- session$userData$stripe()
       subscription <- hold_stripe$subscription
@@ -352,11 +352,11 @@ billing_module <- function(input, output, session) {
 
       } else {
         amount_out <- paste0(
-          "$",
+          "&#163;",
           formatC(subscription$amount / 100, format = "f", digits = 2, big.mark = ","),
           "/",
           subscription$interval
-        )
+        ) %>% HTML()
 
         # No trial or current time is after trial end
         if (hold_stripe$trial_days_remaining <= 0) {
@@ -590,7 +590,7 @@ billing_module <- function(input, output, session) {
         dom = dom_
       )
     ) %>%
-      DT::formatCurrency(4)
+      DT::formatCurrency(4,currency = "&#163;")
   })
 
 
