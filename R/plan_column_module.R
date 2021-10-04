@@ -109,7 +109,7 @@ plan_column_module <- function(input, output, session,
       format(as.numeric(hold_plan$amount) / 100, big.mark = ","),
       "/",
       hold_plan$interval
-    )
+    ) %>% HTML()
   })
 
 
