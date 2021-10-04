@@ -73,7 +73,7 @@ payments_app_ui <- function(
     head,
     sidebar,
     body,
-    skin = "midnight"
+    skin = "purple"
   )
 }
 
